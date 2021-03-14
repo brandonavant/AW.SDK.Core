@@ -1,15 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EB5BD7CA-5BCC-4ABF-89C7-8ADC00013C66}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ApplicationIcon />
     <AssemblyKeyContainerName />
-    <AssemblyName>AW.Core</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
@@ -18,12 +12,6 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject />
     <SignAssembly>true</SignAssembly>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -39,15 +27,10 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <DocumentationFile>
     </DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -55,116 +38,45 @@
     <NoWarn>0618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <BaseAddress>285212672</BaseAddress>
-    <Optimize>true</Optimize>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <DocumentationFile>bin\Release\AW.Core.XML</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <NoWarn>0618 1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AW\DataStructures\AttributeProvider.Generated.cs">
+    <Compile Update="AW\DataStructures\AttributeProvider.Generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AttributeProvider.tt</DependentUpon>
     </Compile>
-    <Compile Include="AW\Exceptions\SDKWrapperInitializationFailedException.cs" />
-    <Compile Include="AW\Exceptions\BindAddressException.cs" />
-    <Compile Include="AW\DataStructures\IAttributeProvider.cs" />
-    <Compile Include="AW\Exceptions\InstanceCreationFailedException.cs" />
-    <Compile Include="AW\Exceptions\SDKWrapperException.cs" />
-    <Compile Include="AW\Exceptions\NotHexStringException.cs" />
-    <Compile Include="AW\Exceptions\V4ObjectSerializationException.cs" />
-    <Compile Include="AW\Instance\Instance.Internal.cs" />
-    <Compile Include="AW\V4Object\Cloth.Enums.cs" />
-    <Compile Include="AW\V4Object\ClothFlags.cs" />
-    <Compile Include="AW\V4Object\Zone.Enums.cs" />
-    <Compile Include="AW\V4Object\V4Object.Enums.cs" />
-    <Compile Include="AW\V4Object\Mover.Enums.cs" />
-    <Compile Include="AW\V4Object\Camera.Enums.cs" />
-    <Compile Include="AW\Instance\Instance.Callbacks.Generated.cs">
+    <Compile Update="AW\Instance\Instance.Callbacks.Generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Instance.Callbacks.tt</DependentUpon>
     </Compile>
-    <Compile Include="AW\Instance\Instance.Events.Generated.cs">
+    <Compile Update="AW\Instance\Instance.Events.Generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Instance.Events.tt</DependentUpon>
     </Compile>
-    <Compile Include="AW\Unmanaged\Unmanaged.CallbacksEnum.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AW\Unmanaged\Unmanaged.EventsEnum.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AW\Unmanaged\Unmanaged.NativeMethods.cs" />
-    <Compile Include="AW\Exceptions\InstanceAttributeException.cs" />
-    <Compile Include="AW\Exceptions\InstanceDisposeFailedException.cs" />
-    <Compile Include="AW\Exceptions\InstanceSetFailedException.cs" />
-    <Compile Include="AW\Instance\IInstance.cs" />
-    <Compile Include="AW\Instance\Instance.Core.cs" />
-    <Compile Include="AW\Instance\Instance.Enumerations.cs" />
-    <Compile Include="AW\Instance\Instance.Methods.cs" />
-    <Compile Include="AW\Instance\Instance.Properties.cs" />
-    <Compile Include="AW\DataStructures\Waypoint.cs" />
-    <Compile Include="AW\DataStructures\Vector.cs" />
-    <Compile Include="AW\V4Object\IV4Object.cs" />
-    <Compile Include="AW\V4Object\Particle.Enums.cs" />
-    <Compile Include="AW\V4Object\ZoneFlags.cs" />
-    <Compile Include="AW\V4Object\CameraFlags.cs" />
-    <Compile Include="AW\V4Object\MoverFlags.cs" />
-    <Compile Include="AW\V4Object\ParticleFlags.cs" />
-    <Compile Include="AW\Instance\Instance.V4Object.cs" />
-    <Compile Include="Utilities\DelegatePair.cs" />
-    <Compile Include="Utilities\HexConverter.cs" />
-    <Compile Include="AW\V4Object\V4ObjectSerializer.cs">
-    </Compile>
-    <Compile Include="AW\DataStructures\Attributes.cs" />
-    <Compile Include="AW\DataStructures\Color.cs" />
-    <Compile Include="AW\DataStructures\VectorRange.cs" />
-    <Compile Include="AW\Utility\Utility.Constants.cs" />
-    <Compile Include="AW\Utility\Utility.Initialize.cs" />
-    <Compile Include="AW\Utility\Utility.Functions.cs" />
-    <Compile Include="AW\V4Object\Camera.cs" />
-    <Compile Include="AW\V4Object\Mover.cs" />
-    <Compile Include="AW\V4Object\Particle.cs" />
-    <Compile Include="AW\V4Object\Zone.cs" />
-    <Compile Include="Utilities\Miscellaneous.cs" />
-    <Compile Include="Utilities\Serialization\FieldSizeOrdinalAttribute.cs" />
-    <Compile Include="Utilities\Serialization\FieldSizeProviderAttribute.cs" />
-    <Compile Include="Utilities\Serialization\FieldValueOrdinalAttribute.cs" />
-    <Compile Include="Utilities\Serialization\OrdinalAttribute.cs" />
-    <Compile Include="Utilities\Serialization\SerializationHelper.cs" />
-    <Compile Include="Utilities\StaticDestructor.cs" />
-    <None Include="AW\DataStructures\AttributeProvider.tt">
+    <None Update="AW\DataStructures\AttributeProvider.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AttributeProvider.Generated.cs</LastGenOutput>
     </None>
-    <Compile Include="AW\Exceptions\InternalZlibException.cs" />
-    <Compile Include="AW\DataStructures\Result.cs" />
-    <Compile Include="AW\V4Object\Cloth.cs" />
-    <None Include="Code.Generate.TemplateClasses.tt">
+    <None Update="Code.Generate.TemplateClasses.tt">
       <LastGenOutput>TemplateClasses.cs</LastGenOutput>
     </None>
-    <None Include="AW\Instance\Instance.Callbacks.tt">
+    <None Update="AW\Instance\Instance.Callbacks.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Instance.Callbacks.Generated.cs</LastGenOutput>
     </None>
-    <None Include="AW\Instance\Instance.Events.tt">
+    <None Update="AW\Instance\Instance.Events.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Instance.Events.Generated.cs</LastGenOutput>
     </None>
@@ -189,10 +101,13 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- Don't use the host compiler, use CSC directly -->
   <PropertyGroup>
     <UseHostCompilerIfAvailable>False</UseHostCompilerIfAvailable>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.2.212405">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Security.Permissions" Version="5.0.0" />
+  </ItemGroup>
 </Project>

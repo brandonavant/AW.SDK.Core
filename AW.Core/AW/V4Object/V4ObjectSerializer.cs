@@ -28,7 +28,7 @@ namespace AW
         /// </summary>
         /// <param name="textReader">The text reader.</param>
         /// <returns></returns>
-        [EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.LinkDemand, Unrestricted = true)]
         public TObject Deserialize(TextReader textReader)
         {
             var buffer = textReader.ReadToEnd();
@@ -40,7 +40,7 @@ namespace AW
         /// </summary>
         /// <param name="inputStream">The input stream.</param>
         /// <returns></returns>
-        [EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.LinkDemand, Unrestricted = true)]
         public TObject Deserialize(Stream inputStream)
         {
             var buffer = new byte[inputStream.Length];
@@ -54,7 +54,7 @@ namespace AW
         /// </summary>
         /// <param name="textWriter">The text writer.</param>
         /// <param name="v4Object">The v4 object.</param>
-        [EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.LinkDemand, Unrestricted = true)]
         public void Serialize(TextWriter textWriter, TObject v4Object)
         {
             textWriter.Write(new HexConverter(ObjectToBytes(v4Object)));
@@ -65,14 +65,14 @@ namespace AW
         /// </summary>
         /// <param name="outputStream">The output stream.</param>
         /// <param name="v4Object">The v4 object.</param>
-        [EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.LinkDemand, Unrestricted = true)]
         public void Serialize(Stream outputStream, TObject v4Object)
         {
             var buffer = ObjectToBytes(v4Object);
             outputStream.Write(buffer, 0, buffer.Length);
         }
 
-        [EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.LinkDemand, Unrestricted = true)]
         private static TObject BytesToObject(byte[] data)
         {
             var inObject = new TObject();

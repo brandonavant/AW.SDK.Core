@@ -11,7 +11,7 @@ namespace AW
         /// </summary>
         /// <typeparam name="TV4Object">The type of the V4 object being used.</typeparam>
         /// <param name="v4Object">The V4 object representing the data to be set.</param>
-        [EnvironmentPermissionAttribute(SecurityAction.Demand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.Demand, Unrestricted = true)]
         public void SetV4Object<TV4Object>(TV4Object v4Object)
             where TV4Object : IV4Object, new()
         {

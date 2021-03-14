@@ -39,7 +39,7 @@ namespace AW
         /// <param name="data">A byte array representing the data to be compressed.</param>
         /// <returns>A byte array representing the compressed data.</returns>
         /// <exception cref="System.Exception">This exception will contain a message with the associated zlib error.</exception>
-        [EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.LinkDemand, Unrestricted = true)]
         public static byte[] Zip(byte[] data)
         {
             //Declare buffers
@@ -86,7 +86,7 @@ namespace AW
         /// <param name="data">A byte array representing the data to be decompressed.</param>
         /// <returns>A byte array representing the decompressed data.</returns>
         /// <exception cref="System.Exception">This exception will contain a message with the associated zlib error.</exception>
-        [EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.LinkDemand, Unrestricted = true)]
         public static byte[] Unzip(byte[] data)
         {
             //Declare buffers
