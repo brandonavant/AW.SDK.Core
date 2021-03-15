@@ -15,9 +15,9 @@ namespace AW
         /// <para>Any other value of 0 or greater will cause the SDK to wait the specified number of milliseconds represented by the value.</para>
         /// </param>
         /// <returns>Returns <c>0</c> if the wait successfully completed.</returns>
-        public static Result Wait(int duration)
+        public static ReasonCode Wait(int duration)
         {
-            return (Result)NativeMethods.aw_wait(duration);
+            return (ReasonCode)NativeMethods.aw_wait(duration);
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace AW
             {
                 Marshal.Copy(data, 0, dataIn, data.Length);
 
-// ReSharper disable RedundantAssignment
+                // ReSharper disable RedundantAssignment
                 int outLength = BufferSize;
-// ReSharper restore RedundantAssignment
+                // ReSharper restore RedundantAssignment
                 int rc = NativeMethods.aw_zip(dataOut, out outLength, dataIn, data.Length);
 
                 if (rc == 0)
@@ -99,9 +99,9 @@ namespace AW
             {
                 Marshal.Copy(data, 0, dataIn, data.Length);
 
-// ReSharper disable RedundantAssignment
+                // ReSharper disable RedundantAssignment
                 int outLength = BufferSize;
-// ReSharper restore RedundantAssignment
+                // ReSharper restore RedundantAssignment
                 int rc = NativeMethods.aw_unzip(dataOut, out outLength, dataIn, data.Length);
 
                 if (rc == 0)
@@ -122,6 +122,15 @@ namespace AW
             }
 
             return retArr;
+        }
+
+        /// <summary>
+        /// Determines the currennt Virtual Reality Time, which equals to UTC-2.
+        /// </summary>
+        /// <returns>A DateTime object, which represents the current Virtual Reality Time.</returns>
+        public static DateTime GetCurrentVrt()
+        {
+            return DateTime.UtcNow.AddHours(-2);
         }
 
         #region properties

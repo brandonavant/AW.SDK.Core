@@ -64,7 +64,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_LOGIN) && _callbackHandlers[AW_CALLBACK_LOGIN].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_LOGIN].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_LOGIN].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -114,7 +114,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_ENTER) && _callbackHandlers[AW_CALLBACK_ENTER].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_ENTER].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_ENTER].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -164,7 +164,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_OBJECT_RESULT) && _callbackHandlers[AW_CALLBACK_OBJECT_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_OBJECT_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_OBJECT_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -214,7 +214,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_LICENSE_ATTRIBUTES) && _callbackHandlers[AW_CALLBACK_LICENSE_ATTRIBUTES].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_LICENSE_ATTRIBUTES].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_LICENSE_ATTRIBUTES].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -264,7 +264,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_LICENSE_RESULT) && _callbackHandlers[AW_CALLBACK_LICENSE_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_LICENSE_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_LICENSE_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -314,7 +314,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_CITIZEN_ATTRIBUTES) && _callbackHandlers[AW_CALLBACK_CITIZEN_ATTRIBUTES].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_CITIZEN_ATTRIBUTES].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_CITIZEN_ATTRIBUTES].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -364,7 +364,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_CITIZEN_RESULT) && _callbackHandlers[AW_CALLBACK_CITIZEN_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_CITIZEN_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_CITIZEN_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -414,7 +414,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_QUERY) && _callbackHandlers[AW_CALLBACK_QUERY].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_QUERY].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_QUERY].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -464,7 +464,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_WORLD_LIST) && _callbackHandlers[AW_CALLBACK_WORLD_LIST].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_WORLD_LIST].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_WORLD_LIST].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -514,7 +514,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_UNIVERSE_EJECTION) && _callbackHandlers[AW_CALLBACK_UNIVERSE_EJECTION].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_UNIVERSE_EJECTION].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_UNIVERSE_EJECTION].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -564,7 +564,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_UNIVERSE_EJECTION_RESULT) && _callbackHandlers[AW_CALLBACK_UNIVERSE_EJECTION_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_UNIVERSE_EJECTION_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_UNIVERSE_EJECTION_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -614,7 +614,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_ADDRESS) && _callbackHandlers[AW_CALLBACK_ADDRESS].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_ADDRESS].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_ADDRESS].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -664,7 +664,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_WORLD_EJECTION) && _callbackHandlers[AW_CALLBACK_WORLD_EJECTION].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_WORLD_EJECTION].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_WORLD_EJECTION].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -714,7 +714,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_WORLD_EJECTION_RESULT) && _callbackHandlers[AW_CALLBACK_WORLD_EJECTION_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_WORLD_EJECTION_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_WORLD_EJECTION_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -764,7 +764,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_ADMIN_WORLD_LIST) && _callbackHandlers[AW_CALLBACK_ADMIN_WORLD_LIST].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_ADMIN_WORLD_LIST].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_ADMIN_WORLD_LIST].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -814,7 +814,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_ADMIN_WORLD_RESULT) && _callbackHandlers[AW_CALLBACK_ADMIN_WORLD_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_ADMIN_WORLD_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_ADMIN_WORLD_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -864,7 +864,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_DELETE_ALL_OBJECTS_RESULT) && _callbackHandlers[AW_CALLBACK_DELETE_ALL_OBJECTS_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_DELETE_ALL_OBJECTS_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_DELETE_ALL_OBJECTS_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -914,7 +914,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_CELL_RESULT) && _callbackHandlers[AW_CALLBACK_CELL_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_CELL_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_CELL_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -964,7 +964,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_RELOAD_REGISTRY) && _callbackHandlers[AW_CALLBACK_RELOAD_REGISTRY].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_RELOAD_REGISTRY].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_RELOAD_REGISTRY].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1014,7 +1014,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_ATTRIBUTES_RESET_RESULT) && _callbackHandlers[AW_CALLBACK_ATTRIBUTES_RESET_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_ATTRIBUTES_RESET_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_ATTRIBUTES_RESET_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1064,7 +1064,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_ADMIN) && _callbackHandlers[AW_CALLBACK_ADMIN].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_ADMIN].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_ADMIN].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1114,7 +1114,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_TERRAIN_SET_RESULT) && _callbackHandlers[AW_CALLBACK_TERRAIN_SET_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_TERRAIN_SET_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_TERRAIN_SET_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1164,7 +1164,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_TERRAIN_NEXT_RESULT) && _callbackHandlers[AW_CALLBACK_TERRAIN_NEXT_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_TERRAIN_NEXT_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_TERRAIN_NEXT_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1214,7 +1214,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_TERRAIN_DELETE_ALL_RESULT) && _callbackHandlers[AW_CALLBACK_TERRAIN_DELETE_ALL_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_TERRAIN_DELETE_ALL_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_TERRAIN_DELETE_ALL_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1264,7 +1264,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_TERRAIN_LOAD_NODE_RESULT) && _callbackHandlers[AW_CALLBACK_TERRAIN_LOAD_NODE_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_TERRAIN_LOAD_NODE_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_TERRAIN_LOAD_NODE_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1314,7 +1314,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_BOTGRAM_RESULT) && _callbackHandlers[AW_CALLBACK_BOTGRAM_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_BOTGRAM_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_BOTGRAM_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1364,7 +1364,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_USER_LIST) && _callbackHandlers[AW_CALLBACK_USER_LIST].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_USER_LIST].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_USER_LIST].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1414,7 +1414,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_BOTMENU_RESULT) && _callbackHandlers[AW_CALLBACK_BOTMENU_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_BOTMENU_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_BOTMENU_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1464,7 +1464,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_CAV) && _callbackHandlers[AW_CALLBACK_CAV].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_CAV].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_CAV].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1514,7 +1514,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_CAV_RESULT) && _callbackHandlers[AW_CALLBACK_CAV_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_CAV_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_CAV_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1564,7 +1564,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_WORLD_INSTANCE) && _callbackHandlers[AW_CALLBACK_WORLD_INSTANCE].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_WORLD_INSTANCE].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_WORLD_INSTANCE].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1614,7 +1614,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_HUD_RESULT) && _callbackHandlers[AW_CALLBACK_HUD_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_HUD_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_HUD_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1664,7 +1664,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_AVATAR_LOCATION) && _callbackHandlers[AW_CALLBACK_AVATAR_LOCATION].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_AVATAR_LOCATION].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_AVATAR_LOCATION].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1714,7 +1714,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_OBJECT_QUERY) && _callbackHandlers[AW_CALLBACK_OBJECT_QUERY].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_OBJECT_QUERY].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_OBJECT_QUERY].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1764,7 +1764,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_WORLD_CAV_RESULT) && _callbackHandlers[AW_CALLBACK_WORLD_CAV_RESULT].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_WORLD_CAV_RESULT].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_WORLD_CAV_RESULT].Managed(this, (ReasonCode)error);
 			}
 		}
 
@@ -1814,7 +1814,7 @@ namespace AW
 		{
 			if(_callbackHandlers.ContainsKey(AW_CALLBACK_WORLD_CAV) && _callbackHandlers[AW_CALLBACK_WORLD_CAV].Managed != null)
 			{
-				_callbackHandlers[AW_CALLBACK_WORLD_CAV].Managed(this, (Result)error);
+				_callbackHandlers[AW_CALLBACK_WORLD_CAV].Managed(this, (ReasonCode)error);
 			}
 		}
 

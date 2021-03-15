@@ -1,80 +1,51 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Threading.Tasks;
 
 namespace AW.Core.Sample
 {
-    class Program
+    public class Program
     {
-        private static Instance _aw;
-
-        static int Main(string[] args)
+        /// <summary>
+        /// Entrypoint of the .NET application.
+        /// </summary>
+        /// <param name="args">Arguments passed into the application via command-line.</param>
+        public static async Task Main(string[] args)
         {
-            Result rc = 0;
-            _aw = new Instance();
+            using IHost host = CreateHostBuilder(args).Build();
 
-            var privilegePassword = string.Empty;
-            var world = string.Empty;
-
-
-            _aw.EventAvatarAdd += EventAvatarAdd_EventHandler;
-
-            Console.WriteLine("Please enter your citizen number:");
-            
-            if(!int.TryParse(Console.ReadLine(), out int citizenNumber))
+            try
             {
-                Console.WriteLine("You enter an invalid value.");
-                return 1;
+                await host.RunAsync();
             }
-
-            Console.WriteLine("Please enter your privilege password.");
-            privilegePassword = Console.ReadLine();
-
-            if (string.IsNullOrEmpty(privilegePassword))
+            catch(Exception ex)
             {
-                Console.WriteLine("You must enter a privilege password.");
-                return 1;
+                Console.WriteLine(ex.Message);
             }
-
-            _aw.SetInt(Attributes.LoginOwner, citizenNumber);
-            _aw.SetString(Attributes.LoginPrivilegePassword, privilegePassword);
-            _aw.SetString(Attributes.LoginApplication, ".NET Standard Test");
-            _aw.SetString(Attributes.LoginName, ".NET Standard Test");
-
-            rc = _aw.Login();
-            if (rc != Result.Success)
-            {
-                Console.WriteLine($"Failed to login (reason {rc})");
-                return 1;
-            }
-
-            Console.WriteLine("Which world would you like to enter?");
-            world = Console.ReadLine();
-
-            rc = _aw.Enter(world);
-            if (rc != Result.Success)
-            {
-                Console.WriteLine($"Failed to enter world '{world}' (reason {rc})");
-                return 1;
-            }
-
-            _aw.SetInt(Attributes.MyX, 0);
-            _aw.SetInt(Attributes.MyZ, 0);
-            _aw.SetInt(Attributes.MyYaw, 0);
-
-            rc = _aw.StateChange();
-            if (rc != Result.Success)
-            {
-                Console.WriteLine($"Failed to change state (reason {rc})");
-                return 1;
-            }
-
-            while (Utility.Wait(-1) != Result.Success) ;
-
-            return 0;
         }
 
-        private static void EventAvatarAdd_EventHandler(IInstance sender)
+        public static IHostBuilder CreateHostBuilder(string[] args)
         {
-            Console.WriteLine($"{_aw.GetString(Attributes.AvatarName)} entered");
+            // NOTE: The purpose of environmentName is to provide a means of feeding different
+            // appsettings files for different environments. For example, when running locally,
+            // you would want to utilize an appsettings.Local.json, which would NOT be checked
+            // into Git. This allows you to feed AW Configuration values without fear of secrets
+            // ending up in Git.
+            var environmentName = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
+
+            return Host.CreateDefaultBuilder(args)
+                .ConfigureHostConfiguration(configHost =>
+                {
+                    configHost.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                    configHost.AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true);
+                    configHost.AddEnvironmentVariables();
+                })
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddHostedService<GreeterService>();
+                });
         }
     }
 }

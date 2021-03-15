@@ -14,7 +14,7 @@ namespace AW
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="result"></param>
-    public delegate void InstanceCallbackHandler(IInstance sender, Result result);
+    public delegate void InstanceCallbackHandler(IInstance sender, ReasonCode result);
 
     /// <summary>
     /// Exposes SDK instance operations for performing bot and world server administration.
@@ -65,143 +65,143 @@ namespace AW
         /// Logs the instance into the universe using the Attributes.LoginOwner, Attributes.LoginPrivilegePassword, Attributes.LoginName, and Attributes.LoginApplication that were set earlier.
         /// If CallbackLogin is not set, this is a blocking operation.
         /// </summary>
-        Result Login();
+        ReasonCode Login();
 
         /// <summary>
         /// Causes the instance to enter the specified world.
         /// If CallbackEnter is not set, this is a blocking operation.
         /// </summary>
         /// <param name="world">The name of the world to enter.</param>
-        Result Enter(string world);
+        ReasonCode Enter(string world);
 
         ///<summary>
         /// Causes the instance to leave the current world.
         /// It is not necessary to call this method when disconnecting or changing worlds.
         ///</summary>
-        Result Exit();
+        ReasonCode Exit();
 
         /// <summary>
         /// Causes the instance to change state within the world.
         /// </summary>     
-        Result StateChange();
+        ReasonCode StateChange();
 
-        Result ObjectClick();
-        Result ObjectSelect();
-        Result AvatarClick(int session);
-        Result UrlSend(int session, string url, string target);
-        Result UrlClick(string url);
-        Result Teleport(int session);
-        Result AvatarSet(int session);
-        Result AvatarReload(int citizen, int session);
-        Result ToolbarClick();
-        Result Noise(int session);
-        Result CameraSet(int session);
-        Result BotmenuSend();
-        Result ObjectBump();
-        Result WorldList();
-        Result Address(int session);
-        Result UserList();
-        Result AvatarLocation(int citizen, int sessionId, string name);
-        Result Say(string message);
-        Result Say(string message, object arg0);
-        Result Say(string message, object arg0, object arg1);
-        Result Say(string message, object arg0, object arg1, object arg2);
-        Result Say(string message, params object[] args);
-        Result Whisper(int session, string message);
-        Result Whisper(int session, string message, object arg0);
-        Result Whisper(int session, string message, object arg0, object arg1);
-        Result Whisper(int session, string message, object arg0, object arg1, object arg2);
-        Result Whisper(int session, string message, params object[] args);
-        Result ConsoleMessage(int session);
-        Result BotgramSend();
-        Result Query(int xSector, int zSector, int[,] sequence);
-        Result Query5x5(int xSector, int zSector, int[,] sequence);
-        Result ObjectQuery();
-        Result CellNext();
-        Result ObjectAdd();
-        Result ObjectChange();
-        Result ObjectDelete();
-        Result ObjectLoad();
-        Result DeleteAllObjects();
-        Result TerrainSet(int x, int z, int texture, int[] heights);
-        Result TerrainQuery(int pageX, int pageZ, long sequence);
-        Result TerrainNext();
-        Result TerrainDeleteAll();
-        Result TerrainLoadNode();
-        Result MoverSetState(int id, int state, int modelNum);
-        Result MoverSetPosition(int id, int x, int y, int z, int yaw, int pitch, int roll);
-        Result MoverRiderAdd(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta);
-        Result MoverRiderChange(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta);
-        Result MoverRiderDelete(int id, int session);
-        Result MoverLinks(int id);
-        Result HudCreate();
-        Result HudClick();
-        Result HudDestroy(int session, int id);
-        Result HudClear(int session);
-        Result TrafficCount(out int inTraffic, out int outTraffic);
-        Result CavRequest(int citizen, int session);
-        Result CavChange();
-        Result CavDelete();
-        Result WorldCavRequest(int citizen, int session);
-        Result WorldCavChange();
-        Result WorldCavDelete();
-        Result UniverseAttributesChange();
-        Result UniverseEjectionAdd();
-        Result UniverseEjectionDelete(int address);
-        Result UniverseEjectionLookup();
-        Result UniverseEjectionNext();
-        Result UniverseEjectionPrevious();
-        Result CitizenAttributesByName(string name);
-        Result CitizenAttributesByNumber(int citizen);
-        Result CitizenAdd();
-        Result CitizenChange();
-        Result CitizenDelete(int citizen);
-        Result CitizenNext();
-        Result CitizenPrevious();
-        Result LicenseAdd();
-        Result LicenseAttributes(string name);
-        Result LicenseChange();
-        Result LicenseDelete(string name);
-        Result LicenseNext();
-        Result LicensePrevious();
-        Result WorldAttributesChange();
-        Result WorldEject();
-        Result WorldReloadRegistry();
-        Result WorldAttributesReset();
-        Result WorldInstanceSet(int citizen, int worldInstance);
-        Result WorldInstanceGet(int citizen);
-        Result WorldAttributesSend(int session);
-        Result WorldEjectionAdd();
-        Result WorldEjectionDelete();
-        Result WorldEjectionLookup();
-        Result WorldEjectionNext();
-        Result WorldEjectionPrevious();
-        Result WorldAttributeSet(int attribute, string value);
-        Result WorldAttributeGet(int attribute, out bool readOnly, string value);
+        ReasonCode ObjectClick();
+        ReasonCode ObjectSelect();
+        ReasonCode AvatarClick(int session);
+        ReasonCode UrlSend(int session, string url, string target);
+        ReasonCode UrlClick(string url);
+        ReasonCode Teleport(int session);
+        ReasonCode AvatarSet(int session);
+        ReasonCode AvatarReload(int citizen, int session);
+        ReasonCode ToolbarClick();
+        ReasonCode Noise(int session);
+        ReasonCode CameraSet(int session);
+        ReasonCode BotmenuSend();
+        ReasonCode ObjectBump();
+        ReasonCode WorldList();
+        ReasonCode Address(int session);
+        ReasonCode UserList();
+        ReasonCode AvatarLocation(int citizen, int sessionId, string name);
+        ReasonCode Say(string message);
+        ReasonCode Say(string message, object arg0);
+        ReasonCode Say(string message, object arg0, object arg1);
+        ReasonCode Say(string message, object arg0, object arg1, object arg2);
+        ReasonCode Say(string message, params object[] args);
+        ReasonCode Whisper(int session, string message);
+        ReasonCode Whisper(int session, string message, object arg0);
+        ReasonCode Whisper(int session, string message, object arg0, object arg1);
+        ReasonCode Whisper(int session, string message, object arg0, object arg1, object arg2);
+        ReasonCode Whisper(int session, string message, params object[] args);
+        ReasonCode ConsoleMessage(int session);
+        ReasonCode BotgramSend();
+        ReasonCode Query(int xSector, int zSector, int[,] sequence);
+        ReasonCode Query5x5(int xSector, int zSector, int[,] sequence);
+        ReasonCode ObjectQuery();
+        ReasonCode CellNext();
+        ReasonCode ObjectAdd();
+        ReasonCode ObjectChange();
+        ReasonCode ObjectDelete();
+        ReasonCode ObjectLoad();
+        ReasonCode DeleteAllObjects();
+        ReasonCode TerrainSet(int x, int z, int texture, int[] heights);
+        ReasonCode TerrainQuery(int pageX, int pageZ, long sequence);
+        ReasonCode TerrainNext();
+        ReasonCode TerrainDeleteAll();
+        ReasonCode TerrainLoadNode();
+        ReasonCode MoverSetState(int id, int state, int modelNum);
+        ReasonCode MoverSetPosition(int id, int x, int y, int z, int yaw, int pitch, int roll);
+        ReasonCode MoverRiderAdd(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta);
+        ReasonCode MoverRiderChange(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta);
+        ReasonCode MoverRiderDelete(int id, int session);
+        ReasonCode MoverLinks(int id);
+        ReasonCode HudCreate();
+        ReasonCode HudClick();
+        ReasonCode HudDestroy(int session, int id);
+        ReasonCode HudClear(int session);
+        ReasonCode TrafficCount(out int inTraffic, out int outTraffic);
+        ReasonCode CavRequest(int citizen, int session);
+        ReasonCode CavChange();
+        ReasonCode CavDelete();
+        ReasonCode WorldCavRequest(int citizen, int session);
+        ReasonCode WorldCavChange();
+        ReasonCode WorldCavDelete();
+        ReasonCode UniverseAttributesChange();
+        ReasonCode UniverseEjectionAdd();
+        ReasonCode UniverseEjectionDelete(int address);
+        ReasonCode UniverseEjectionLookup();
+        ReasonCode UniverseEjectionNext();
+        ReasonCode UniverseEjectionPrevious();
+        ReasonCode CitizenAttributesByName(string name);
+        ReasonCode CitizenAttributesByNumber(int citizen);
+        ReasonCode CitizenAdd();
+        ReasonCode CitizenChange();
+        ReasonCode CitizenDelete(int citizen);
+        ReasonCode CitizenNext();
+        ReasonCode CitizenPrevious();
+        ReasonCode LicenseAdd();
+        ReasonCode LicenseAttributes(string name);
+        ReasonCode LicenseChange();
+        ReasonCode LicenseDelete(string name);
+        ReasonCode LicenseNext();
+        ReasonCode LicensePrevious();
+        ReasonCode WorldAttributesChange();
+        ReasonCode WorldEject();
+        ReasonCode WorldReloadRegistry();
+        ReasonCode WorldAttributesReset();
+        ReasonCode WorldInstanceSet(int citizen, int worldInstance);
+        ReasonCode WorldInstanceGet(int citizen);
+        ReasonCode WorldAttributesSend(int session);
+        ReasonCode WorldEjectionAdd();
+        ReasonCode WorldEjectionDelete();
+        ReasonCode WorldEjectionLookup();
+        ReasonCode WorldEjectionNext();
+        ReasonCode WorldEjectionPrevious();
+        ReasonCode WorldAttributeSet(int attribute, string value);
+        ReasonCode WorldAttributeGet(int attribute, out bool readOnly, string value);
         bool CheckRight(int citizen, string rightString);
         bool CheckRightAll(string rightString);
         bool HasWorldRight(int citizen, Attributes right);
         bool HasWorldRightAll(Attributes right);
-        Result ServerWorldAdd();
-        Result ServerWorldDelete(int id);
-        Result ServerWorldChange(int id);
-        Result ServerWorldList();
-        Result ServerWorldStart(int id);
-        Result ServerWorldStop(int id);
-        Result ServerWorldSet(int id);
-        Result ServerWorldInstanceSet(int id);
-        Result ServerWorldInstanceAdd(int id, int instanceId);
-        Result ServerWorldInstanceDelete(int id, int instanceId);
-        Result LaserBeam();
-        Result Listen(ChatChannels channels);
-        Result SayChannel(ChatChannels channel, string message);
-        Result SayChannel(ChatChannels channel, string message, object arg0);
-        Result SayChannel(ChatChannels channel, string message, object arg0, object arg1);
-        Result SayChannel(ChatChannels channel, string message, object arg0, object arg1, object arg2);
-        Result SayChannel(ChatChannels channel, string message, params object[] args);
-        Result ObjectAddSession(int session);
-        Result ObjectDeleteSession(int session);
-        Result ServerWorldGet();
+        ReasonCode ServerWorldAdd();
+        ReasonCode ServerWorldDelete(int id);
+        ReasonCode ServerWorldChange(int id);
+        ReasonCode ServerWorldList();
+        ReasonCode ServerWorldStart(int id);
+        ReasonCode ServerWorldStop(int id);
+        ReasonCode ServerWorldSet(int id);
+        ReasonCode ServerWorldInstanceSet(int id);
+        ReasonCode ServerWorldInstanceAdd(int id, int instanceId);
+        ReasonCode ServerWorldInstanceDelete(int id, int instanceId);
+        ReasonCode LaserBeam();
+        ReasonCode Listen(ChatChannels channels);
+        ReasonCode SayChannel(ChatChannels channel, string message);
+        ReasonCode SayChannel(ChatChannels channel, string message, object arg0);
+        ReasonCode SayChannel(ChatChannels channel, string message, object arg0, object arg1);
+        ReasonCode SayChannel(ChatChannels channel, string message, object arg0, object arg1, object arg2);
+        ReasonCode SayChannel(ChatChannels channel, string message, params object[] args);
+        ReasonCode ObjectAddSession(int session);
+        ReasonCode ObjectDeleteSession(int session);
+        ReasonCode ServerWorldGet();
 
         /// <summary>
         /// Indicates that the instance is in the process of being disposed.

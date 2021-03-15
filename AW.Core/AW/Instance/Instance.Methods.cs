@@ -10,10 +10,10 @@ namespace AW
         /// Logs the instance into the universe using the Attributes.LoginOwner, Attributes.LoginPrivilegePassword, Attributes.LoginName, and Attributes.LoginApplication that were set earlier.
         /// If CallbackLogin is not set, this is a blocking operation.
         /// </summary>
-        public Result Login()
+        public ReasonCode Login()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_login();
+            return (ReasonCode)NativeMethods.aw_login();
         }
 
         /// <summary>
@@ -21,617 +21,617 @@ namespace AW
         /// If CallbackEnter is not set, this is a blocking operation.
         /// </summary>
         /// <param name="world">The name of the world to enter.</param>
-        public Result Enter(string world)
+        public ReasonCode Enter(string world)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_enter(world);
+            return (ReasonCode)NativeMethods.aw_enter(world);
         }
 
         ///<summary>
         /// Causes the instance to leave the current world.
         /// It is not necessary to call this method when disconnecting or changing worlds.
         ///</summary>
-        public Result Exit()
+        public ReasonCode Exit()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_exit();
+            return (ReasonCode)NativeMethods.aw_exit();
         }
 
         /// <summary>
         /// Causes the instance to change state within the world.
         /// </summary>     
-        public Result StateChange()
+        public ReasonCode StateChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_state_change();
+            return (ReasonCode)NativeMethods.aw_state_change();
         }
         #endregion
 
         #region Event manipulation methods
-        public Result ObjectClick()
+        public ReasonCode ObjectClick()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_click();
+            return (ReasonCode)NativeMethods.aw_object_click();
         }
 
-        public Result ObjectSelect()
+        public ReasonCode ObjectSelect()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_select();
+            return (ReasonCode)NativeMethods.aw_object_select();
         }
 
-        public Result AvatarClick(int session)
+        public ReasonCode AvatarClick(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_avatar_click(session);
+            return (ReasonCode)NativeMethods.aw_avatar_click(session);
         }
 
-        public Result UrlSend(int session, string url, string target)
+        public ReasonCode UrlSend(int session, string url, string target)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_url_send(session, url, target);
+            return (ReasonCode)NativeMethods.aw_url_send(session, url, target);
         }
 
-        public Result UrlClick(string url)
+        public ReasonCode UrlClick(string url)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_url_click(url);
+            return (ReasonCode)NativeMethods.aw_url_click(url);
         }
 
-        public Result Teleport(int session)
+        public ReasonCode Teleport(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_teleport(session);
+            return (ReasonCode)NativeMethods.aw_teleport(session);
         }
 
-        public Result AvatarSet(int session)
+        public ReasonCode AvatarSet(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_avatar_set(session);
+            return (ReasonCode)NativeMethods.aw_avatar_set(session);
         }
 
-        public Result AvatarReload(int citizen, int session)
+        public ReasonCode AvatarReload(int citizen, int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_avatar_reload(citizen, session);
+            return (ReasonCode)NativeMethods.aw_avatar_reload(citizen, session);
         }
 
-        public Result ToolbarClick()
+        public ReasonCode ToolbarClick()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_toolbar_click();
+            return (ReasonCode)NativeMethods.aw_toolbar_click();
         }
 
-        public Result Noise(int session)
+        public ReasonCode Noise(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_noise(session);
+            return (ReasonCode)NativeMethods.aw_noise(session);
         }
 
-        public Result CameraSet(int session)
+        public ReasonCode CameraSet(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_camera_set(session);
+            return (ReasonCode)NativeMethods.aw_camera_set(session);
         }
 
-        public Result BotmenuSend()
+        public ReasonCode BotmenuSend()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_botmenu_send();
+            return (ReasonCode)NativeMethods.aw_botmenu_send();
         }
 
-        public Result ObjectBump()
+        public ReasonCode ObjectBump()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_bump();
+            return (ReasonCode)NativeMethods.aw_object_bump();
         }
         #endregion
 
         #region Information query methods
-        public Result WorldList()
+        public ReasonCode WorldList()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_list();
+            return (ReasonCode)NativeMethods.aw_world_list();
         }
 
-        public Result Address(int session)
+        public ReasonCode Address(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_address(session);
+            return (ReasonCode)NativeMethods.aw_address(session);
         }
 
-        public Result UserList()
+        public ReasonCode UserList()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_user_list();
+            return (ReasonCode)NativeMethods.aw_user_list();
         }
 
-        public Result AvatarLocation(int citizen, int sessionId, string name)
+        public ReasonCode AvatarLocation(int citizen, int sessionId, string name)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_avatar_location(citizen, sessionId, name);
+            return (ReasonCode)NativeMethods.aw_avatar_location(citizen, sessionId, name);
         }
         #endregion
 
         #region Communication methods
-        public Result Say(string message)
+        public ReasonCode Say(string message)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say(message);
+            return (ReasonCode)NativeMethods.aw_say(message);
         }
 
-        public Result Say(string message, object arg0)
+        public ReasonCode Say(string message, object arg0)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say(string.Format(message, arg0));
+            return (ReasonCode)NativeMethods.aw_say(string.Format(message, arg0));
         }
 
-        public Result Say(string message, object arg0, object arg1)
+        public ReasonCode Say(string message, object arg0, object arg1)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say(string.Format(message, arg0, arg1));
+            return (ReasonCode)NativeMethods.aw_say(string.Format(message, arg0, arg1));
         }
 
-        public Result Say(string message, object arg0, object arg1, object arg2)
+        public ReasonCode Say(string message, object arg0, object arg1, object arg2)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say(string.Format(message, arg0, arg1, arg2));
+            return (ReasonCode)NativeMethods.aw_say(string.Format(message, arg0, arg1, arg2));
         }
 
-        public Result Say(string message, params object[] args)
+        public ReasonCode Say(string message, params object[] args)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say(string.Format(message, args));
+            return (ReasonCode)NativeMethods.aw_say(string.Format(message, args));
         }
 
-        public Result Whisper(int session, string message)
+        public ReasonCode Whisper(int session, string message)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_whisper(session, message);
+            return (ReasonCode)NativeMethods.aw_whisper(session, message);
         }
 
-        public Result Whisper(int session, string message, object arg0)
+        public ReasonCode Whisper(int session, string message, object arg0)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_whisper(session, string.Format(message, arg0));
+            return (ReasonCode)NativeMethods.aw_whisper(session, string.Format(message, arg0));
         }
 
-        public Result Whisper(int session, string message, object arg0, object arg1)
+        public ReasonCode Whisper(int session, string message, object arg0, object arg1)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_whisper(session, string.Format(message, arg0, arg1));
+            return (ReasonCode)NativeMethods.aw_whisper(session, string.Format(message, arg0, arg1));
         }
 
-        public Result Whisper(int session, string message, object arg0, object arg1, object arg2)
+        public ReasonCode Whisper(int session, string message, object arg0, object arg1, object arg2)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_whisper(session, string.Format(message, arg0, arg1, arg2));
+            return (ReasonCode)NativeMethods.aw_whisper(session, string.Format(message, arg0, arg1, arg2));
         }
 
-        public Result Whisper(int session, string message, params object[] args)
+        public ReasonCode Whisper(int session, string message, params object[] args)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_whisper(session, string.Format(message, args));
+            return (ReasonCode)NativeMethods.aw_whisper(session, string.Format(message, args));
         }
 
-        public Result ConsoleMessage(int session)
+        public ReasonCode ConsoleMessage(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_console_message(session);
+            return (ReasonCode)NativeMethods.aw_console_message(session);
         }
 
-        public Result BotgramSend()
+        public ReasonCode BotgramSend()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_botgram_send();
+            return (ReasonCode)NativeMethods.aw_botgram_send();
         }
         #endregion
 
         #region Property methods
-        public Result Query(int xSector, int zSector, int[,] sequence)
+        public ReasonCode Query(int xSector, int zSector, int[,] sequence)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_query(xSector, zSector, sequence);
+            return (ReasonCode)NativeMethods.aw_query(xSector, zSector, sequence);
         }
 
-        public Result Query5x5(int xSector, int zSector, int[,] sequence)
+        public ReasonCode Query5x5(int xSector, int zSector, int[,] sequence)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_query_5x5(xSector, zSector, sequence);
+            return (ReasonCode)NativeMethods.aw_query_5x5(xSector, zSector, sequence);
         }
 
-        public Result ObjectQuery()
+        public ReasonCode ObjectQuery()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_query();
+            return (ReasonCode)NativeMethods.aw_object_query();
         }
 
-        public Result CellNext()
+        public ReasonCode CellNext()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_cell_next();
+            return (ReasonCode)NativeMethods.aw_cell_next();
         }
 
-        public Result ObjectAdd()
+        public ReasonCode ObjectAdd()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_add();
+            return (ReasonCode)NativeMethods.aw_object_add();
         }
 
-        public Result ObjectChange()
+        public ReasonCode ObjectChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_change();
+            return (ReasonCode)NativeMethods.aw_object_change();
         }
 
-        public Result ObjectDelete()
+        public ReasonCode ObjectDelete()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_delete();
+            return (ReasonCode)NativeMethods.aw_object_delete();
         }
 
-        public Result ObjectLoad()
+        public ReasonCode ObjectLoad()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_object_load();
+            return (ReasonCode)NativeMethods.aw_object_load();
         }
 
-        public Result DeleteAllObjects()
+        public ReasonCode DeleteAllObjects()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_delete_all_objects();
+            return (ReasonCode)NativeMethods.aw_delete_all_objects();
         }
         #endregion
 
         #region Terrain methods
-        public Result TerrainSet(int x, int z, int texture, int[] heights)
+        public ReasonCode TerrainSet(int x, int z, int texture, int[] heights)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_terrain_set(x, z, heights.Length, texture, heights);
+            return (ReasonCode)NativeMethods.aw_terrain_set(x, z, heights.Length, texture, heights);
         }
 
-        public Result TerrainQuery(int pageX, int pageZ, long sequence)
+        public ReasonCode TerrainQuery(int pageX, int pageZ, long sequence)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_terrain_query(pageX, pageZ, sequence);
+            return (ReasonCode)NativeMethods.aw_terrain_query(pageX, pageZ, sequence);
         }
 
-        public Result TerrainNext()
+        public ReasonCode TerrainNext()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_terrain_next();
+            return (ReasonCode)NativeMethods.aw_terrain_next();
         }
 
-        public Result TerrainDeleteAll()
+        public ReasonCode TerrainDeleteAll()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_terrain_delete_all();
+            return (ReasonCode)NativeMethods.aw_terrain_delete_all();
         }
 
-        public Result TerrainLoadNode()
+        public ReasonCode TerrainLoadNode()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_terrain_load_node();
+            return (ReasonCode)NativeMethods.aw_terrain_load_node();
         }
         #endregion
 
         #region Mover methods
-        public Result MoverSetState(int id, int state, int modelNum)
+        public ReasonCode MoverSetState(int id, int state, int modelNum)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_mover_set_state(id, state, modelNum);
+            return (ReasonCode)NativeMethods.aw_mover_set_state(id, state, modelNum);
         }
 
-        public Result MoverSetPosition(int id, int x, int y, int z, int yaw, int pitch, int roll)
+        public ReasonCode MoverSetPosition(int id, int x, int y, int z, int yaw, int pitch, int roll)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_mover_set_position(id, x, y, z, yaw, pitch, roll);
+            return (ReasonCode)NativeMethods.aw_mover_set_position(id, x, y, z, yaw, pitch, roll);
         }
 
-        public Result MoverRiderAdd(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta)
+        public ReasonCode MoverRiderAdd(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_mover_rider_add(id, session, dist, angle, yDelta, yawDelta, pitchDelta);
+            return (ReasonCode)NativeMethods.aw_mover_rider_add(id, session, dist, angle, yDelta, yawDelta, pitchDelta);
         }
 
-        public Result MoverRiderChange(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta)
+        public ReasonCode MoverRiderChange(int id, int session, int dist, int angle, int yDelta, int yawDelta, int pitchDelta)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_mover_rider_change(id, session, dist, angle, yDelta, yawDelta, pitchDelta);
+            return (ReasonCode)NativeMethods.aw_mover_rider_change(id, session, dist, angle, yDelta, yawDelta, pitchDelta);
         }
 
-        public Result MoverRiderDelete(int id, int session)
+        public ReasonCode MoverRiderDelete(int id, int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_mover_rider_delete(id, session);
+            return (ReasonCode)NativeMethods.aw_mover_rider_delete(id, session);
         }
 
-        public Result MoverLinks(int id)
+        public ReasonCode MoverLinks(int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_mover_links(id);
+            return (ReasonCode)NativeMethods.aw_mover_links(id);
         }
         #endregion
 
         #region HUD methods
-        public Result HudCreate()
+        public ReasonCode HudCreate()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_hud_create();
+            return (ReasonCode)NativeMethods.aw_hud_create();
         }
 
-        public Result HudClick()
+        public ReasonCode HudClick()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_hud_click();
+            return (ReasonCode)NativeMethods.aw_hud_click();
         }
 
-        public Result HudDestroy(int session, int id)
+        public ReasonCode HudDestroy(int session, int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_hud_destroy(session, id);
+            return (ReasonCode)NativeMethods.aw_hud_destroy(session, id);
         }
 
-        public Result HudClear(int session)
+        public ReasonCode HudClear(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_hud_clear(session);
+            return (ReasonCode)NativeMethods.aw_hud_clear(session);
         }
 
-        public Result TrafficCount(out int inTraffic, out int outTraffic)
+        public ReasonCode TrafficCount(out int inTraffic, out int outTraffic)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_traffic_count(out inTraffic, out outTraffic);
+            return (ReasonCode)NativeMethods.aw_traffic_count(out inTraffic, out outTraffic);
         }
         #endregion
 
         #region CAV manipulation methods
-        public Result CavRequest(int citizen, int session)
+        public ReasonCode CavRequest(int citizen, int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_cav_request(citizen, session);
+            return (ReasonCode)NativeMethods.aw_cav_request(citizen, session);
         }
 
-        public Result CavChange()
+        public ReasonCode CavChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_cav_change();
+            return (ReasonCode)NativeMethods.aw_cav_change();
         }
 
-        public Result CavDelete()
+        public ReasonCode CavDelete()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_cav_delete();
+            return (ReasonCode)NativeMethods.aw_cav_delete();
         }
 
-        public Result WorldCavRequest(int citizen, int session)
+        public ReasonCode WorldCavRequest(int citizen, int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_cav_request(citizen, session);
+            return (ReasonCode)NativeMethods.aw_world_cav_request(citizen, session);
         }
 
-        public Result WorldCavChange()
+        public ReasonCode WorldCavChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_cav_change();
+            return (ReasonCode)NativeMethods.aw_world_cav_change();
         }
 
-        public Result WorldCavDelete()
+        public ReasonCode WorldCavDelete()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_cav_delete();
+            return (ReasonCode)NativeMethods.aw_world_cav_delete();
         }
         #endregion
 
         #region Universe related methods
         #region Universe management methods
-        public Result UniverseAttributesChange()
+        public ReasonCode UniverseAttributesChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_universe_attributes_change();
+            return (ReasonCode)NativeMethods.aw_universe_attributes_change();
         }
 
-        public Result UniverseEjectionAdd()
+        public ReasonCode UniverseEjectionAdd()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_universe_ejection_add();
+            return (ReasonCode)NativeMethods.aw_universe_ejection_add();
         }
 
-        public Result UniverseEjectionDelete(int address)
+        public ReasonCode UniverseEjectionDelete(int address)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_universe_ejection_delete(address);
+            return (ReasonCode)NativeMethods.aw_universe_ejection_delete(address);
         }
 
-        public Result UniverseEjectionLookup()
+        public ReasonCode UniverseEjectionLookup()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_universe_ejection_lookup();
+            return (ReasonCode)NativeMethods.aw_universe_ejection_lookup();
         }
 
-        public Result UniverseEjectionNext()
+        public ReasonCode UniverseEjectionNext()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_universe_ejection_next();
+            return (ReasonCode)NativeMethods.aw_universe_ejection_next();
         }
 
-        public Result UniverseEjectionPrevious()
+        public ReasonCode UniverseEjectionPrevious()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_universe_ejection_previous();
+            return (ReasonCode)NativeMethods.aw_universe_ejection_previous();
         }
         #endregion
 
         #region Citizen methods
-        public Result CitizenAttributesByName(string name)
+        public ReasonCode CitizenAttributesByName(string name)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_citizen_attributes_by_name(name);
+            return (ReasonCode)NativeMethods.aw_citizen_attributes_by_name(name);
         }
 
-        public Result CitizenAttributesByNumber(int citizen)
+        public ReasonCode CitizenAttributesByNumber(int citizen)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_citizen_attributes_by_number(citizen);
+            return (ReasonCode)NativeMethods.aw_citizen_attributes_by_number(citizen);
         }
 
-        public Result CitizenAdd()
+        public ReasonCode CitizenAdd()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_citizen_add();
+            return (ReasonCode)NativeMethods.aw_citizen_add();
         }
 
-        public Result CitizenChange()
+        public ReasonCode CitizenChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_citizen_change();
+            return (ReasonCode)NativeMethods.aw_citizen_change();
         }
 
-        public Result CitizenDelete(int citizen)
+        public ReasonCode CitizenDelete(int citizen)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_citizen_delete(citizen);
+            return (ReasonCode)NativeMethods.aw_citizen_delete(citizen);
         }
 
-        public Result CitizenNext()
+        public ReasonCode CitizenNext()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_citizen_next();
+            return (ReasonCode)NativeMethods.aw_citizen_next();
         }
 
-        public Result CitizenPrevious()
+        public ReasonCode CitizenPrevious()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_citizen_previous();
+            return (ReasonCode)NativeMethods.aw_citizen_previous();
         }
         #endregion
 
         #region World license methods
-        public Result LicenseAdd()
+        public ReasonCode LicenseAdd()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_license_add();
+            return (ReasonCode)NativeMethods.aw_license_add();
         }
 
-        public Result LicenseAttributes(string name)
+        public ReasonCode LicenseAttributes(string name)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_license_attributes(name);
+            return (ReasonCode)NativeMethods.aw_license_attributes(name);
         }
 
-        public Result LicenseChange()
+        public ReasonCode LicenseChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_license_change();
+            return (ReasonCode)NativeMethods.aw_license_change();
         }
 
-        public Result LicenseDelete(string name)
+        public ReasonCode LicenseDelete(string name)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_license_delete(name);
+            return (ReasonCode)NativeMethods.aw_license_delete(name);
         }
 
-        public Result LicenseNext()
+        public ReasonCode LicenseNext()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_license_next();
+            return (ReasonCode)NativeMethods.aw_license_next();
         }
 
-        public Result LicensePrevious()
+        public ReasonCode LicensePrevious()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_license_previous();
+            return (ReasonCode)NativeMethods.aw_license_previous();
         }
         #endregion
         #endregion
 
         #region World related methods
         #region World management methods
-        public Result WorldAttributesChange()
+        public ReasonCode WorldAttributesChange()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_attributes_change();
+            return (ReasonCode)NativeMethods.aw_world_attributes_change();
         }
 
-        public Result WorldEject()
+        public ReasonCode WorldEject()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_eject();
+            return (ReasonCode)NativeMethods.aw_world_eject();
         }
 
-        public Result WorldReloadRegistry()
+        public ReasonCode WorldReloadRegistry()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_reload_registry();
+            return (ReasonCode)NativeMethods.aw_world_reload_registry();
         }
 
-        public Result WorldAttributesReset()
+        public ReasonCode WorldAttributesReset()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_attributes_reset();
+            return (ReasonCode)NativeMethods.aw_world_attributes_reset();
         }
 
-        public Result WorldInstanceSet(int citizen, int worldInstance)
+        public ReasonCode WorldInstanceSet(int citizen, int worldInstance)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_instance_set(citizen, worldInstance);
+            return (ReasonCode)NativeMethods.aw_world_instance_set(citizen, worldInstance);
         }
 
-        public Result WorldInstanceGet(int citizen)
+        public ReasonCode WorldInstanceGet(int citizen)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_instance_get(citizen);
+            return (ReasonCode)NativeMethods.aw_world_instance_get(citizen);
         }
 
-        public Result WorldAttributesSend(int session)
+        public ReasonCode WorldAttributesSend(int session)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_attributes_send(session);
+            return (ReasonCode)NativeMethods.aw_world_attributes_send(session);
         }
 
-        public Result WorldEjectionAdd()
+        public ReasonCode WorldEjectionAdd()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_ejection_add();
+            return (ReasonCode)NativeMethods.aw_world_ejection_add();
         }
 
-        public Result WorldEjectionDelete()
+        public ReasonCode WorldEjectionDelete()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_ejection_delete();
+            return (ReasonCode)NativeMethods.aw_world_ejection_delete();
         }
 
-        public Result WorldEjectionLookup()
+        public ReasonCode WorldEjectionLookup()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_ejection_lookup();
+            return (ReasonCode)NativeMethods.aw_world_ejection_lookup();
         }
 
-        public Result WorldEjectionNext()
+        public ReasonCode WorldEjectionNext()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_ejection_next();
+            return (ReasonCode)NativeMethods.aw_world_ejection_next();
         }
 
-        public Result WorldEjectionPrevious()
+        public ReasonCode WorldEjectionPrevious()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_ejection_previous();
+            return (ReasonCode)NativeMethods.aw_world_ejection_previous();
         }
 
-        public Result WorldAttributeSet(int attribute, string value)
+        public ReasonCode WorldAttributeSet(int attribute, string value)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_world_attribute_set(attribute, value);
+            return (ReasonCode)NativeMethods.aw_world_attribute_set(attribute, value);
         }
 
-        public Result WorldAttributeGet(int attribute, out bool readOnly, string value)
+        public ReasonCode WorldAttributeGet(int attribute, out bool readOnly, string value)
         {
             SetInstance();
             int ro;
             int ret = NativeMethods.aw_world_attribute_get(attribute, out ro, value);
             readOnly = ro != 0;
-            return (Result)ret;
+            return (ReasonCode)ret;
         }
         #endregion
 
@@ -663,127 +663,127 @@ namespace AW
         #endregion
 
         #region World server management methods
-        public Result ServerWorldAdd()
+        public ReasonCode ServerWorldAdd()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_add();
+            return (ReasonCode)NativeMethods.aw_server_world_add();
         }
 
-        public Result ServerWorldDelete(int id)
+        public ReasonCode ServerWorldDelete(int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_delete(id);
+            return (ReasonCode)NativeMethods.aw_server_world_delete(id);
         }
 
-        public Result ServerWorldChange(int id)
+        public ReasonCode ServerWorldChange(int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_change(id);
+            return (ReasonCode)NativeMethods.aw_server_world_change(id);
         }
 
-        public Result ServerWorldList()
+        public ReasonCode ServerWorldList()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_list();
+            return (ReasonCode)NativeMethods.aw_server_world_list();
         }
 
-        public Result ServerWorldStart(int id)
+        public ReasonCode ServerWorldStart(int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_start(id);
+            return (ReasonCode)NativeMethods.aw_server_world_start(id);
         }
 
-        public Result ServerWorldStop(int id)
+        public ReasonCode ServerWorldStop(int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_stop(id);
+            return (ReasonCode)NativeMethods.aw_server_world_stop(id);
         }
 
-        public Result ServerWorldSet(int id)
+        public ReasonCode ServerWorldSet(int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_set(id);
+            return (ReasonCode)NativeMethods.aw_server_world_set(id);
         }
 
-        public Result ServerWorldInstanceSet(int id)
+        public ReasonCode ServerWorldInstanceSet(int id)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_instance_set(id);
+            return (ReasonCode)NativeMethods.aw_server_world_instance_set(id);
         }
 
-        public Result ServerWorldInstanceAdd(int id, int instanceId)
+        public ReasonCode ServerWorldInstanceAdd(int id, int instanceId)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_instance_add(id, instanceId);
+            return (ReasonCode)NativeMethods.aw_server_world_instance_add(id, instanceId);
         }
 
-        public Result ServerWorldInstanceDelete(int id, int instanceId)
+        public ReasonCode ServerWorldInstanceDelete(int id, int instanceId)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_server_world_instance_delete(id, instanceId);
+            return (ReasonCode)NativeMethods.aw_server_world_instance_delete(id, instanceId);
         }
         #endregion
 
         #region Laser Beam methods
 
-        public Result LaserBeam()
+        public ReasonCode LaserBeam()
         {
             SetInstance();
-            return (Result)NativeMethods.aw_laser_beam();
+            return (ReasonCode)NativeMethods.aw_laser_beam();
         }
 
-        public Result Listen(ChatChannels channels)
+        public ReasonCode Listen(ChatChannels channels)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_listen((int) channels);
+            return (ReasonCode)NativeMethods.aw_listen((int) channels);
         }
 
-        public Result SayChannel(ChatChannels channel, string message)
+        public ReasonCode SayChannel(ChatChannels channel, string message)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say_channel(string.Format(message), (int)channel);
+            return (ReasonCode)NativeMethods.aw_say_channel(string.Format(message), (int)channel);
         }
 
-        public Result SayChannel(ChatChannels channel, string message, object arg0)
+        public ReasonCode SayChannel(ChatChannels channel, string message, object arg0)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say_channel(string.Format(message, arg0), (int)channel);
+            return (ReasonCode)NativeMethods.aw_say_channel(string.Format(message, arg0), (int)channel);
         }
 
-        public Result SayChannel(ChatChannels channel, string message, object arg0, object arg1)
+        public ReasonCode SayChannel(ChatChannels channel, string message, object arg0, object arg1)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say_channel(string.Format(message, arg0, arg1), (int)channel);
+            return (ReasonCode)NativeMethods.aw_say_channel(string.Format(message, arg0, arg1), (int)channel);
         }
 
-        public Result SayChannel(ChatChannels channel, string message, object arg0, object arg1, object arg2)
+        public ReasonCode SayChannel(ChatChannels channel, string message, object arg0, object arg1, object arg2)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say_channel(string.Format(message, arg0, arg1, arg2), (int)channel);
+            return (ReasonCode)NativeMethods.aw_say_channel(string.Format(message, arg0, arg1, arg2), (int)channel);
         }
 
-        public Result SayChannel(ChatChannels channel, string message, params object[] args)
+        public ReasonCode SayChannel(ChatChannels channel, string message, params object[] args)
         {
             SetInstance();
-            return (Result)NativeMethods.aw_say_channel(string.Format(message, args), (int)channel);
+            return (ReasonCode)NativeMethods.aw_say_channel(string.Format(message, args), (int)channel);
         }
 
-        public Result ObjectAddSession(int session)
+        public ReasonCode ObjectAddSession(int session)
         {
             SetInstance();
-            return (Result) NativeMethods.aw_object_add_session(session);
+            return (ReasonCode) NativeMethods.aw_object_add_session(session);
         }
 
-        public Result ObjectDeleteSession(int session)
+        public ReasonCode ObjectDeleteSession(int session)
         {
             SetInstance();
-            return (Result) NativeMethods.aw_object_delete_session(session);
+            return (ReasonCode) NativeMethods.aw_object_delete_session(session);
         }
 
-        public Result ServerWorldGet()
+        public ReasonCode ServerWorldGet()
         {
             SetInstance();
-            return (Result) NativeMethods.aw_server_world_get();
+            return (ReasonCode) NativeMethods.aw_server_world_get();
         }
 
         #endregion
