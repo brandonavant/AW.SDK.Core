@@ -63,8 +63,8 @@ namespace AW.Core.Sample
                 throw new Exception($"Failed to enter {_config.EntryWorld} (reason {rc})");
             }
 
-            _aw.Attributes.MyX = 3000000;
-            _aw.Attributes.MyZ = 3000000;
+            _aw.Attributes.MyX = 0;
+            _aw.Attributes.MyZ = 0;
             _aw.Attributes.MyYaw = 2250;
 
             rc = _aw.StateChange();
