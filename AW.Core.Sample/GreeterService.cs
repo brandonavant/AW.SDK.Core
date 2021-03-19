@@ -26,7 +26,9 @@ namespace AW.Core.Sample
             _config = new AwConfig();
 
             configuration.Bind("AwConfig", _config);
+
             WireUpEventHandlers();
+            WireUpCallbackHandlers();
         }
 
         /// <summary>
@@ -35,6 +37,12 @@ namespace AW.Core.Sample
         private void WireUpEventHandlers()
         {
             _aw.EventAvatarAdd += EventAvatarAdd_EventHandler;
+        }
+
+        private void WireUpCallbackHandlers()
+        {
+            _aw.CallbackLogin += CallbackLogin_CallbackHandler;
+            _aw.CallbackEnter += CallbackEnter_CallbackHandler;
         }
 
         /// <summary>
@@ -51,17 +59,35 @@ namespace AW.Core.Sample
             _aw.Attributes.LoginApplication = ".NET 5 AW.Core Sample Application";
             _aw.Attributes.LoginName = "Greeterbot";
 
-            rc = _aw.Login();
-            if (rc != ReasonCode.Success)
+            _aw.Login();
+                
+            while (!stoppingToken.IsCancellationRequested && Utility.Wait(-1) != ReasonCode.Success) ;
+
+            return Task.CompletedTask;
+        }
+
+        private void CallbackLogin_CallbackHandler(IInstance sender, ReasonCode result)
+        {
+            if (result != ReasonCode.Success)
             {
-                throw new Exception($"Failed to login (reason {rc})");
+                throw new Exception($"Failed to login (reason {result})");
             }
 
-            rc = _aw.Enter(_config.EntryWorld);
-            if (rc != ReasonCode.Success)
+            Console.WriteLine("Login Successful!");
+
+            _aw.Enter(_config.EntryWorld);
+        }
+
+        private void CallbackEnter_CallbackHandler(IInstance sender, ReasonCode result)
+        {
+            ReasonCode rc = 0;
+
+            if (result != ReasonCode.Success)
             {
-                throw new Exception($"Failed to enter {_config.EntryWorld} (reason {rc})");
+                throw new Exception($"Failed to enter {_config.EntryWorld} (reason {result})");
             }
+
+            Console.WriteLine($"Successfully entered world {_config.EntryWorld}!");
 
             _aw.Attributes.MyX = 0;
             _aw.Attributes.MyZ = 0;
@@ -72,10 +98,6 @@ namespace AW.Core.Sample
             {
                 throw new Exception($"Failed to change state (reason {rc})");
             }
-
-            while (!stoppingToken.IsCancellationRequested && Utility.Wait(-1) != ReasonCode.Success) ;
-
-            return Task.CompletedTask;
         }
 
 
