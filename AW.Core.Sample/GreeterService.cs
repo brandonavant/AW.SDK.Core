@@ -31,14 +31,18 @@ namespace AW.Core.Sample
             WireUpCallbackHandlers();
         }
 
+
         /// <summary>
-        /// Wire up all AW SDK Event Handlers./>
+        /// Wires up all <see cref="AW.AW_EVENT" handlers./>
         /// </summary>
         private void WireUpEventHandlers()
         {
             _aw.EventAvatarAdd += EventAvatarAdd_EventHandler;
         }
 
+        /// <summary>
+        /// Wire up all <see cref="AW.AW_CALLBACK"/> handlers.
+        /// </summary>
         private void WireUpCallbackHandlers()
         {
             _aw.CallbackLogin += CallbackLogin_CallbackHandler;
@@ -66,11 +70,18 @@ namespace AW.Core.Sample
             return Task.CompletedTask;
         }
 
-        private void CallbackLogin_CallbackHandler(IInstance sender, ReasonCode result)
+        #region Callback Handlers
+
+        /// <summary>
+        /// Callback handler which processes a <see cref="AW.AW_CALLBACK.AW_CALLBACK_LOGIN"/> callback.
+        /// </summary>
+        /// <param name="sender">The <see cref="AW.IInstance"/> instance which triggered the callback.</param>
+        /// <param name="reasonCode">The <see cref="AW.ReasonCode"/> result of the call to <see cref="AW.IInstance.Login"/>.</param>
+        private void CallbackLogin_CallbackHandler(IInstance sender, ReasonCode reasonCode)
         {
-            if (result != ReasonCode.Success)
+            if (reasonCode != ReasonCode.Success)
             {
-                throw new Exception($"Failed to login (reason {result})");
+                throw new Exception($"Failed to login (reason {reasonCode})");
             }
 
             Console.WriteLine("Login Successful!");
@@ -78,13 +89,18 @@ namespace AW.Core.Sample
             _aw.Enter(_config.EntryWorld);
         }
 
-        private void CallbackEnter_CallbackHandler(IInstance sender, ReasonCode result)
+        /// <summary>
+        /// Callback handler which prcoesses a <see cref="AW.AW_CALLBACK.AW_CALLBACK_ENTER"/> callback.
+        /// </summary>
+        /// <param name="sender">The <see cref="AW.IInstance"/> instance which triggered the callback.</param>
+        /// <param name="reasonCode">The <see cref="AW.ReasonCode"/> result of the call to <see cref="AW.IInstance.Enter()"/>.</param>
+        private void CallbackEnter_CallbackHandler(IInstance sender, ReasonCode reasonCode)
         {
             ReasonCode rc = 0;
 
-            if (result != ReasonCode.Success)
+            if (reasonCode != ReasonCode.Success)
             {
-                throw new Exception($"Failed to enter {_config.EntryWorld} (reason {result})");
+                throw new Exception($"Failed to enter {_config.EntryWorld} (reason {reasonCode})");
             }
 
             Console.WriteLine($"Successfully entered world {_config.EntryWorld}!");
@@ -99,6 +115,8 @@ namespace AW.Core.Sample
                 throw new Exception($"Failed to change state (reason {rc})");
             }
         }
+
+        #endregion
 
 
         #region Event Handlers
